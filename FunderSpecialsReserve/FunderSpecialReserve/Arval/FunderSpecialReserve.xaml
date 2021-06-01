@@ -1,0 +1,196 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="FunderSpecialReserve" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:a="clr-namespace:AutoramaLibrary;assembly=AutoramaLibrary" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="iConfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="iJsonObject" Type="InArgument(njl:JObject)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>500,1405</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>FunderSpecialReserve_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="24">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Security</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="FunderSpecialReserve" sap:VirtualizedContainerService.HintSize="480,1345" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="pQuoteNumber" />
+      <Variable x:TypeArguments="x:String" Name="pCustomerName" />
+      <Variable x:TypeArguments="x:String" Name="pCustomerCode" />
+      <Variable x:TypeArguments="x:String" Name="pCapCode" />
+      <Variable x:TypeArguments="x:String" Name="pFuelType" />
+      <Variable x:TypeArguments="x:String" Name="pColour" />
+      <Variable x:TypeArguments="x:String" Name="pTransmission" />
+      <Variable x:TypeArguments="x:String" Name="pVehicleDescription" />
+      <Variable x:TypeArguments="x:String" Name="pOrderNumber" />
+      <Variable x:TypeArguments="x:String" Name="pUsername" />
+      <Variable x:TypeArguments="ss:SecureString" Name="pPassword" />
+      <Variable x:TypeArguments="ui:BrowserType" Name="pBrowserType" />
+      <Variable x:TypeArguments="ui:Browser" Name="pBrowser" />
+      <Variable x:TypeArguments="x:Boolean" Name="pLoginSuccess" />
+      <Variable x:TypeArguments="x:Boolean" Name="pPageLoaded" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Assign variables workflow" sap:VirtualizedContainerService.HintSize="438,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Arval\AssignVariables.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="oVehicleDescription">[pVehicleDescription]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="oTransmission">[pTransmission]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="oColour">[pColour]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="oFuelType">[pFuelType]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="oCapCode">[pCapCode]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="oCustomerCode">[pCustomerCode]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="oCustomerName">[pCustomerName]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="oQuoteNumber">[pQuoteNumber]</OutArgument>
+        <InArgument x:TypeArguments="njl:JObject" x:Key="iJsonObject">[iJsonObject]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ALD login workflow" sap:VirtualizedContainerService.HintSize="438,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Arval\Login.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="iConfig">[iConfig]</InArgument>
+        <OutArgument x:TypeArguments="ui:Browser" x:Key="oBrowser">[pBrowser]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="iCustomerName">[pCustomerName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="iCustomerCode">[pCustomerCode]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="iQuoteNumber">[pQuoteNumber]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Open Find vehicle workflow" sap:VirtualizedContainerService.HintSize="438,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Arval\OpenFindVehicle.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="ui:Browser" x:Key="ioBrowser">[pBrowser]</InOutArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="iTimeout">[Convert.ToInt32(iConfig("TimeoutMedium").ToString)]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <TryCatch DisplayName="Try Catch (Reserve Arval Specials vehicle)" sap:VirtualizedContainerService.HintSize="438,797" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Reserve Vehicle (Arval)" sap:VirtualizedContainerService.HintSize="384,570" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Search for Vehicle workflow" sap:VirtualizedContainerService.HintSize="342,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Arval\SearchForVehicle.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="iFuelType">[pFuelType]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="iTransmission">[pTransmission]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="iCapCode">[pCapCode]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="iColour">[pColour]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="iVehicleDescription">[pVehicleDescription]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="iTimeOut">[Convert.ToInt32(iConfig("TimeoutShort").ToString)]</InArgument>
+              <InOutArgument x:TypeArguments="ui:Browser" x:Key="ioBrowser">[pBrowser]</InOutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Submit Order request workflow" sap:VirtualizedContainerService.HintSize="342,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Arval\FillAndSubmitOrderRequestForm.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="iQuoteNumber">[pQuoteNumber]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="iCustomerName">[pCustomerName]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="iCustomerCode">[pCustomerCode]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="oOrderNumber">[pOrderNumber]</OutArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="iTimeOut">[Convert.ToInt32(iConfig("TimeoutShort").ToString)]</InArgument>
+              <InOutArgument x:TypeArguments="ui:Browser" x:Key="ioBrowser">[pBrowser]</InOutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <a:SendEmail iAttachmentFilePath="{x:Null}" iAttachmentsCollection="{x:Null}" iDestinationBcc="{x:Null}" iDestinationCc="{x:Null}" iScreenshotFolder="{x:Null}" DisplayName="Send Arval Success Email" sap:VirtualizedContainerService.HintSize="342,22" sap2010:WorkflowViewState.IdRef="SendEmail_3" iBody="[iConfig(&quot;emailBodyArval&quot;).ToString.Replace(&quot;{CustomerName}&quot;,pCustomerName).Replace(&quot;{CompanyCode}&quot;,pCustomerCode).Replace(&quot;{QuoteID}&quot;,pQuoteNumber).Replace(&quot;{OrderNumber}&quot;,pOrderNumber)]" iDestinationTo="[iConfig(&quot;emailDestinationArval&quot;).ToString]" iEmailCredential="[iConfig(&quot;emailCredential&quot;).ToString]" iHostPort="[Convert.ToInt32(iConfig(&quot;ServerPortSMTP&quot;).ToString)]" iHostServer="[iConfig(&quot;ServerNameSMTP&quot;).ToString]" iScreenshotFilePath="[Path.Combine(iConfig(&quot;ReserveScreenshotFolderPath&quot;).ToString, &quot;Screenshot_&quot;+Now.ToString(&quot;yyMMdd.hhmmss&quot;)+&quot;.png&quot;)]" iSendScreenshot="True" iSubject="[iConfig(&quot;emailSubjectArval&quot;).ToString]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Arval logout workflow" sap:VirtualizedContainerService.HintSize="342,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Arval\Logout.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InOutArgument x:TypeArguments="ui:Browser" x:Key="ioBrowser">[pBrowser]</InOutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Business Exception" sap:VirtualizedContainerService.HintSize="376,328" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <a:SendEmail iAttachmentFilePath="{x:Null}" iAttachmentsCollection="{x:Null}" iDestinationBcc="{x:Null}" iDestinationCc="{x:Null}" iScreenshotFilePath="{x:Null}" DisplayName="Send Arval Business Error Email" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="SendEmail_4" iBody="[iConfig(&quot;emailBodyBusinessExceptionArval&quot;).ToString.Replace(&quot;{Exception}&quot;,exception.Message).Replace(&quot;{CustomerName}&quot;,pCustomerName).Replace(&quot;{CompanyCode}&quot;, pCustomerCode).Replace(&quot;{QuoteID}&quot;,pQuoteNumber)]" iDestinationTo="[iConfig(&quot;emailErrorArval&quot;).ToString]" iEmailCredential="[iConfig(&quot;emailCredential&quot;).ToString]" iHostPort="[Convert.ToInt32(iConfig(&quot;ServerPortSMTP&quot;).ToString)]" iHostServer="[iConfig(&quot;ServerNameSMTP&quot;).ToString]" iScreenshotFolder="[iConfig(&quot;ExScreenshotsFolderPath&quot;).ToString]" iSendScreenshot="True" iSubject="[iConfig(&quot;emailBusinessErrorSubjectArval&quot;).ToString]" />
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Arval logout workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Arval\Logout.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InOutArgument x:TypeArguments="ui:Browser" x:Key="ioBrowser">[pBrowser]</InOutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <Throw DisplayName="Throw 'Business Exception'" Exception="[New BusinessRuleException(exception.Message)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
