@@ -2305,9 +2305,9 @@
     "restore": {
       "projectUniqueName": "FunderSpecialReserveSQS",
       "projectName": "FunderSpecialReserveSQS",
-      "projectPath": "D:\\Users\\rpa.admin05\\Documents\\GitHub\\RPA-FunderSpecialsRetriever\\FunderSpecialReserveSQS\\.local",
+      "projectPath": "D:\\Users\\rpa.admin05\\Documents\\GitHub\\RPA-FunderSpecialsReserve\\FunderSpecialReserveSQS\\.local",
       "packagesPath": "D:\\Users\\rpa.admin05\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\rpa.admin05\\Documents\\GitHub\\RPA-FunderSpecialsRetriever\\FunderSpecialReserveSQS\\.local"
+      "outputPath": "D:\\Users\\rpa.admin05\\Documents\\GitHub\\RPA-FunderSpecialsReserve\\FunderSpecialReserveSQS\\.local"
     },
     "frameworks": {
       "net461": {
